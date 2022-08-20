@@ -1,0 +1,80 @@
+.container1 {
+  margin: 70px;
+  padding: 50px;
+  border-style: solid;
+  border-color: black;
+  width: fit-content;
+  block-size: fit-content;
+}
+.container2 {
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.container3 {
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+}
+.choseCity {
+  font-size: 30px;
+}
+.enterButton {
+  font-size: 30px;
+  display: block;
+  padding-left: 0;
+}
+.typedCity {
+  text-align: center;
+  font-size: 40px;
+}
+.mainTemperature {
+  text-align: left;
+  font-size: 75px;
+  font-weight: bold;
+}
+.units {
+  font-size: 30px;
+  color: rgb(71, 71, 208);
+  text-decoration: underline;
+}
+button {
+  text-align: right;
+  background-color: rgb(40, 40, 133);
+  color: white;
+  border: none;
+  padding: 2% auto;
+  transition: all 200ms ease;
+}
+button:hover {
+  background-color: rgb(173, 219, 240);
+  color: rgb(40, 40, 133);
+}
+.mainEmoji {
+  text-align: center;
+}
+.fa-solid {
+  color: rgb(222, 54, 217);
+  font-size: 150px;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+}
+.container4 {
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 30px;
+  text-align: center;
+}
+.emoji1 {
+  text-align: center;
+  font-size: 50px;
+}
+.card-body {
+  font-size: 20px;
+  text-align: center;
+}
