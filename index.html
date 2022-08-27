@@ -19,96 +19,129 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container1">
-      <div class="container2">
-        <div class="row">
-          <div class="col-8">
-            <form id="search-form">
-              <input
-                type="text"
-                placeholder="Search for a city.."
-                autocomplete="off"
-                autofocus="on"
-                id="searched-city"
+    <div class="weatherApp">
+      <div class="container1">
+        <div class="container2">
+          <div class="row">
+            <div class="col-8">
+              <form id="search-form">
+                <input
+                  type="text"
+                  placeholder="Search for a city.."
+                  autocomplete="off"
+                  autofocus="on"
+                  id="searched-city"
+                />
+                <input type="submit" value="Search" />
+              </form>
+            </div>
+            <div class="col-4">
+              <button id="button">Current Location</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container3">
+          <div class="row">
+            <div class="col-4">
+              <ul>
+                <li id="default-city">Wroclaw</li>
+                <li id="date">Thursday</li>
+                <li id="description">Clear</li>
+                <li class="mainTemperature">
+                  <span id="temperature"> 25</span>
+                  <span class="units">
+                    <a href="#" id="celcius-temp" class="active"> °C </a> |
+                    <a href="#" id="farenheit-temp"> °F </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <img
+                src="https://png.pngtree.com/png-vector/20190120/ourlarge/pngtree-rainbow-colorful-the-weather-sun-png-image_484406.jpg"
+                id="main-emoji"
+                alt="Clear"
               />
-              <input type="submit" value="Search" />
-            </form>
-          </div>
-          <div class="col-4">
-            <button id="button">Current Location</button>
-          </div>
-        </div>
-      </div>
-      <div class="container3">
-        <div class="row">
-          <div class="col-12 city" id="default-city">Wroclaw</div>
-          <div class="date" id="date">Thursday, 17th July</div>
-          <div class="col-8 mainTemperature">
-            <div class="row">
-              <div class="col-3 temperature" id="temperature">25</div>
+            </div>
+            <div class="col-4" id="weather-conditions">
+              <ul>
+                <li>Pressure: <span id="pressure"> 0 </span> hPa</li>
+                <li>Humidity: <span id="humidity"> 0 </span>%</li>
+                <li>Wind: <span id="wind"> 0</span> m/s</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      <div class="container4">
-        <div class="row">
-          <div class="col day1">
-            <div class="card" style="width: 9rem">
-              <div class="card-body">
-                <h5 class="card-title">Friday</h5>
+
+        <div class="container4">
+          <div class="row">
+            <div class="col day1">
+              <div class="card" style="width: 6rem">
+                <div class="card-body">
+                  <h5 class="card-title">Friday</h5>
+                </div>
+                <p class="emoji1">
+                  <i class="fa-regular fa-sun"></i>
+                </p>
+                <div class="card-body">25°C / 17°C</div>
               </div>
-              <p class="emoji1">
-                <i class="fa-regular fa-sun"></i>
-              </p>
-              <div class="card-body">25°C / 17°C</div>
             </div>
-          </div>
-          <div class="col day2">
-            <div class="card" style="width: 9rem">
-              <div class="card-body">
-                <h5 class="card-title">Friday</h5>
+            <div class="col day2">
+              <div class="card" style="width: 6rem">
+                <div class="card-body">
+                  <h5 class="card-title">Friday</h5>
+                </div>
+                <p class="emoji1">
+                  <i class="fa-regular fa-sun"></i>
+                </p>
+                <div class="card-body">25°C / 17°C</div>
               </div>
-              <p class="emoji1">
-                <i class="fa-regular fa-sun"></i>
-              </p>
-              <div class="card-body">25°C / 17°C</div>
             </div>
-          </div>
-          <div class="col day3">
-            <div class="card" style="width: 9rem">
-              <div class="card-body">
-                <h5 class="card-title">Friday</h5>
+            <div class="col day3">
+              <div class="card" style="width: 6rem">
+                <div class="card-body">
+                  <h5 class="card-title">Friday</h5>
+                </div>
+                <p class="emoji1">
+                  <i class="fa-regular fa-sun"></i>
+                </p>
+                <div class="card-body">25°C / 17°C</div>
               </div>
-              <p class="emoji1">
-                <i class="fa-regular fa-sun"></i>
-              </p>
-              <div class="card-body">25°C / 17°C</div>
             </div>
-          </div>
-          <div class="col day4">
-            <div class="card" style="width: 9rem">
-              <div class="card-body">
-                <h5 class="card-title">Friday</h5>
+            <div class="col day4">
+              <div class="card" style="width: 6rem">
+                <div class="card-body">
+                  <h5 class="card-title">Friday</h5>
+                </div>
+                <p class="emoji1">
+                  <i class="fa-regular fa-sun"></i>
+                </p>
+                <div class="card-body">25°C / 17°C</div>
               </div>
-              <p class="emoji1">
-                <i class="fa-regular fa-sun"></i>
-              </p>
-              <div class="card-body">25°C / 17°C</div>
             </div>
-          </div>
-          <div class="col day5">
-            <div class="card" style="width: 9rem">
-              <div class="card-body">
-                <h5 class="card-title">Friday</h5>
+            <div class="col day5">
+              <div class="card" style="width: 6rem">
+                <div class="card-body">
+                  <h5 class="card-title">Friday</h5>
+                </div>
+                <p class="emoji1">
+                  <i class="fa-regular fa-sun"></i>
+                </p>
+                <div class="card-body">25°C / 17°C</div>
               </div>
-              <p class="emoji1">
-                <i class="fa-regular fa-sun"></i>
-              </p>
-              <div class="card-body">25°C / 17°C</div>
             </div>
           </div>
         </div>
       </div>
+      <footer>
+        <a
+          href="https://github.com/zuzanna-stepnicka/weather-app"
+          target="_blank"
+          >Open-source code,</a
+        >
+        by Zuzanna Stepnicka.
+      </footer>
     </div>
     <script src="styles/index.js"></script>
   </body>

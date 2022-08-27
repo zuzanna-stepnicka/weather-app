@@ -1,46 +1,59 @@
+.weatherApp {
+  max-width: 800px;
+}
 .container1 {
-  margin: 70px;
-  padding: 50px;
+  margin: 30px 30px 10px 30px;
+  padding: 15px;
   border-style: solid;
   border-color: black;
-  width: fit-content;
-  block-size: fit-content;
 }
 .container2 {
   margin: 10px 10px 10px 10px;
-  padding: 20px;
-  font-size: 30px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .container3 {
   margin: 10px 10px 10px 10px;
-  padding: 20px;
+  padding: 10px;
 }
-.choseCity {
-  font-size: 30px;
-}
-.enterButton {
-  font-size: 30px;
-  display: block;
-  padding-left: 0;
-}
-.typedCity {
-  text-align: center;
-  font-size: 40px;
-}
+
 .mainTemperature {
   text-align: left;
-  font-size: 75px;
+  font-size: 40px;
   font-weight: bold;
 }
+#mainEmoji {
+  text-align: center;
+}
 .units {
-  font-size: 30px;
-  color: rgb(71, 71, 208);
-  text-decoration: underline;
+  position: relative;
+  font-size: 16px;
+  top: -16px;
+}
+.active {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+#weather-conditions {
+  text-align: left;
 }
 button {
   text-align: right;
-  background-color: rgb(66, 194, 52);
+  background-color: rgb(61, 52, 194);
   color: white;
   border: none;
   padding: 2% auto;
@@ -50,31 +63,40 @@ button:hover {
   background-color: rgb(173, 219, 240);
   color: rgb(40, 40, 133);
 }
+img {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(255, 255, 255);
+}
 .mainEmoji {
+  color: rgb(222, 172, 54);
+  font-size: 100px;
   text-align: center;
 }
-.fa-solid {
-  color: rgb(222, 54, 217);
-  font-size: 150px;
-}
+
 .card {
   display: block;
   margin: 0 auto;
+  border: none;
 }
 .container4 {
   margin: 10px 10px 10px 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .card-title {
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
 }
 .emoji1 {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
 }
 .card-body {
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
+}
+footer {
+  padding: 0 auto;
+  margin: 10px 30px 10px 30px;
 }
