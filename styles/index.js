@@ -1,41 +1,32 @@
-function displayForecast(forecastDays) {
-  let temperatureForecast = [
-    {
-      max: Math.round(forecastDays[0].main.temp_max),
-      min: Math.round(forecastDays[0].main.temp_min),
-    },
-    {
-      max: Math.round(forecastDays[1].main.temp_max),
-      min: Math.round(forecastDays[1].main.temp_min),
-    },
-    {
-      max: Math.round(forecastDays[2].main.temp_max),
-      min: Math.round(forecastDays[2].main.temp_min),
-    },
-    {
-      max: Math.round(forecastDays[3].main.temp_max),
-      min: Math.round(forecastDays[3].main.temp_min),
-    },
-    {
-      max: Math.round(forecastDays[4].main.temp_max),
-      min: Math.round(forecastDays[4].main.temp_min),
-    },
-  ];
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thr", "Fir", "Sat", "Sun"];
+  return days[day];
+}
 
+function displayForecast(forecastDays) {
   let forecastElement = document.querySelector(`#forecast`);
 
   let forecastHTML = `<div class="row">`;
 
-  let days = ["1", "2", "3", "4", "5"];
-  days.forEach(function (day) {
+  forecastDays.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
-                <div class="weatherForecastDay">${day}</div>
+                <div class="weatherForecastDay">${formatDate(
+                  forecastDay.dt
+                )}</div>
                 <div class="emoji">
-                  <img src="http://openweathermap.org/img/wn/10d@2x.png" id="emoji" alt="Clear"/>
+                  <img src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png" id="emoji" alt="Clear"/>
                 </div>
-                <div class="weatherForecastTemperature"> <span id="forecastMaxTemp">25°C</span>   <span id="forecastMinTemp">17°C</span> </div>
+                <div class="weatherForecastTemperature"> <span id="forecastMaxTemp">${Math.round(
+                  forecastDay.temp.max
+                )}°C</span>   <span id="forecastMinTemp">${Math.round(
+        forecastDay.temp.min
+      )}°C</span> </div>
             </div>`;
   });
 
@@ -46,11 +37,11 @@ function displayForecast(forecastDays) {
 
 function getCoordinates(coordinates) {
   function getForecast(response) {
-    let day1 = response.data.list[0];
-    let day2 = response.data.list[8];
-    let day3 = response.data.list[16];
-    let day4 = response.data.list[24];
-    let day5 = response.data.list[32];
+    let day1 = response.data.daily[0];
+    let day2 = response.data.daily[1];
+    let day3 = response.data.daily[2];
+    let day4 = response.data.daily[3];
+    let day5 = response.data.daily[4];
     let forecastDays = [day1, day2, day3, day4, day5];
     console.log([forecastDays]);
     displayForecast(forecastDays);
@@ -58,7 +49,7 @@ function getCoordinates(coordinates) {
 
   let lat = coordinates.lat;
   let lon = coordinates.lon;
-  let apiUrlCoords = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=f969f80557f0fc40ffddd519ebd7d7f4&units=metric`;
+  let apiUrlCoords = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=eae061c95483dd066657bfc7525418ed&units=metric`;
   axios.get(apiUrlCoords).then(getForecast);
 }
 
