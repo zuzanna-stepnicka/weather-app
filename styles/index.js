@@ -24,9 +24,9 @@ function displayForecast(forecastDays) {
                 </div>
                 <div class="weatherForecastTemperature"> <span id="forecastMaxTemp">${Math.round(
                   forecastDay.temp.max
-                )}°C</span>   <span id="forecastMinTemp">${Math.round(
+                )}°</span>   <span id="forecastMinTemp">${Math.round(
         forecastDay.temp.min
-      )}°C</span> </div>
+      )}°</span> </div>
             </div>`;
   });
 
@@ -196,9 +196,13 @@ function convertToFarenheit(event) {
   let temperatureElement = document.querySelector("#temperature");
   let farenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(farenheitTemperature);
+
+  let forecastMaxTempElement = document.querySelector(`#forecastMaxTemp`);
+  let forecastMinTempElement = document.querySelector(`#forecastMinTemp`);
+  console.log(forecastMaxTempElement);
 }
 
-function converToCelcius(event) {
+function convertToCelcius(event) {
   event.preventDefault();
   celciusTemp.classList.add("active");
   farenheitTemp.classList.remove("active");
@@ -210,4 +214,4 @@ let farenheitTemp = document.querySelector(`#farenheit-temp`);
 farenheitTemp.addEventListener("click", convertToFarenheit);
 
 let celciusTemp = document.querySelector("#celcius-temp");
-celciusTemp.addEventListener("click", converToCelcius);
+celciusTemp.addEventListener("click", convertToCelcius);
