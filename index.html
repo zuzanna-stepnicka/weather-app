@@ -15,8 +15,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="weatherApp">
-      <div class="container1">
+    <div class="container1">
+      <div class="weatherApp">
         <div class="container2">
           <div class="row">
             <div class="col-8">
@@ -70,21 +70,9 @@
           </div>
         </div>
 
-        <div class="container4 weatherForecast">
-          <div class="row">
-            <div class="col-2">
-              
-                <div class="weatherForecastDay">Friday</div>
-                <div class="emoji">
-                  <img src="http://openweathermap.org/img/wn/10d@2x.png" id="emoji" alt="Clear"/>
-                </div>
-                <div class="weatherForecastTemperature"> <span id="forecastDayTemp">25°C</span>  / <span id="forecastNightTemp">17°C</span> </div>
-            </div>
-        </div>
+        <div class="container4 weatherForecast" id="forecast"></div>
       </div>
-      
-    </div>
-    <footer>
+      <footer>
         <a
           href="https://github.com/zuzanna-stepnicka/weather-app"
           target="_blank"
@@ -92,6 +80,7 @@
         >
         by Zuzanna Stepnicka.
       </footer>
+    </div>
     <script src="styles/index.js"></script>
   </body>
 </html>

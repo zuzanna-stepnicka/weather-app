@@ -40,6 +40,7 @@ function search(event) {
       "src",
       `http://openweathermap.org/img/wn/${icon}@2x.png`
     );
+    displayForecast();
   }
 
   axios.get(apiUrl).then(showData);
@@ -118,8 +119,32 @@ function accessLocation() {
         "src",
         `http://openweathermap.org/img/wn/${icon}@2x.png`
       );
+      displayForecast();
     }
   }
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector(`#forecast`);
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Mon", "Tue", "Wed", "Thr", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                <div class="weatherForecastDay">${day}</div>
+                <div class="emoji">
+                  <img src="http://openweathermap.org/img/wn/10d@2x.png" id="emoji" alt="Clear"/>
+                </div>
+                <div class="weatherForecastTemperature"> <span id="forecastDayTemp">25°C</span>  / <span id="forecastNightTemp">17°C</span> </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + "</div>";
+
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let button = document.querySelector(`#button`);
