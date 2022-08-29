@@ -2,10 +2,10 @@
   max-width: 800px;
 }
 .container1 {
-  margin: 30px 30px 10px 30px;
+  margin: 30px 30px 0px 30px;
   padding: 15px;
   border-style: solid;
-  border-color: black;
+  border-color: rgb(192, 237, 12);
 }
 .container2 {
   margin: 10px 10px 10px 10px;
@@ -29,8 +29,9 @@ ul {
   font-size: 40px;
   font-weight: bold;
 }
-#mainEmoji {
-  text-align: center;
+#main-emoji {
+  width: 160px;
+  height: 160px;
 }
 .units {
   position: relative;
@@ -63,38 +64,26 @@ button:hover {
   background-color: rgb(173, 219, 240);
   color: rgb(40, 40, 133);
 }
-img {
-  width: 150px;
-  height: 150px;
-  background-color: rgb(255, 255, 255);
-}
-.mainEmoji {
-  color: rgb(222, 172, 54);
-  font-size: 100px;
-  text-align: center;
-}
 
-.card {
-  display: block;
-  margin: 0 auto;
-  border: none;
-}
 .container4 {
   margin: 10px 10px 10px 10px;
   padding: 10px;
 }
 
-.card-title {
-  font-size: 20px;
+.weatherForecastDay {
+  font-size: 16px;
   text-align: center;
+  opacity: 0.7;
 }
-.emoji1 {
+.emoji {
   text-align: center;
-  font-size: 30px;
+  width: 100px;
+  height: 100px;
 }
-.card-body {
-  font-size: 15px;
+.weatherForecastTemperature {
+  font-size: 12px;
   text-align: center;
+  opacity: 0.7;
 }
 footer {
   padding: 0 auto;
